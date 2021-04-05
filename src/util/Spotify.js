@@ -1,4 +1,4 @@
-const clientId = "739c31e7b96e4fd0b52fd35a950da9aa";
+const clientId = "5826428eadfd45ba83a0b08888e331b5";
 const redirectUri = "http://localhost:3000/";
 let accessToken;
 
@@ -39,6 +39,7 @@ const Spotify = {
 					artist: track.artists[0].name,
 					album: track.album.name,
 					uri: track.uri,
+					img: track.album.images[2].url,
 				}));
 			});
 	},
