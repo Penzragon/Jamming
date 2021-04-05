@@ -42,3 +42,7 @@ img {
 	width: 64px;
 	object-fit: contain;
 }
+
+audio {
+	margin-top: 0.5rem;
+}
