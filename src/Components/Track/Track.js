@@ -4,8 +4,24 @@ import "./Track.css";
 class Track extends React.Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			isPlaying: false,
+			audio: new Audio(this.props.track.preview),
+		};
 		this.addTrack = this.addTrack.bind(this);
 		this.removeTrack = this.removeTrack.bind(this);
+		this.playSample = this.playSample.bind(this);
+		this.pauseSample = this.pauseSample.bind(this);
+	}
+
+	playSample() {
+		this.setState({ isPlaying: true });
+		this.state.audio.play();
+	}
+
+	pauseSample() {
+		this.setState({ isPlaying: false });
+		this.state.audio.pause();
 	}
 
 	renderAction() {
@@ -19,6 +35,22 @@ class Track extends React.Component {
 			return (
 				<button className="Track-action" onClick={this.addTrack}>
 					+
+				</button>
+			);
+		}
+	}
+
+	renderPlayPause() {
+		if (this.state.isPlaying) {
+			return (
+				<button className="Track-action PlayPause" onClick={this.pauseSample}>
+					Pause
+				</button>
+			);
+		} else {
+			return (
+				<button className="Track-action PlayPause" onClick={this.playSample}>
+					Play
 				</button>
 			);
 		}
@@ -41,15 +73,13 @@ class Track extends React.Component {
 					<p>
 						{this.props.track.artist} | {this.props.track.album}
 					</p>
-					{this.props.track.preview && (
-						<audio id="player" src={this.props.track.preview} controls></audio>
-					)}
+
+					{this.props.track.preview && this.renderPlayPause()}
 					{!this.props.track.preview && (
-						<p style={{ fontWeight: "bold", marginTop: "0.5rem" }}>
-							No Audio Sample
-						</p>
+						<p className="NoAudio">No Audio Sample</p>
 					)}
 				</div>
+
 				{this.renderAction()}
 			</div>
 		);
