@@ -1,0 +1,13 @@
+.Playlist-list {
+	max-height: 300px;
+	overflow: scroll;
+}
+
+.local {
+	border-bottom: 1px solid #6f6f6f;
+}
+
+.containerPlaylist {
+	width: 100%;
+	margin-top: 1rem;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Playlist.css";
 import TrackList from "../TrackList/TrackList";
+import PlaylistList from "../PlaylistList/PlaylistList";
 
 class Playlist extends React.Component {
 	constructor(props) {
@@ -26,6 +27,7 @@ class Playlist extends React.Component {
 				<button className="Playlist-save" onClick={this.props.onSave}>
 					SAVE TO SPOTIFY
 				</button>
+				<PlaylistList />
 			</div>
 		);
 	}

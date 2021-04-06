@@ -1,0 +1,10 @@
+.Playlist-item {
+	height: 1.5rem;
+	display: flex;
+	align-items: center;
+}
+
+.Playlist-item:hover {
+	background-color: #6c41ec;
+	cursor: pointer;
+}
