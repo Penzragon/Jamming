@@ -67,7 +67,7 @@ class Track extends React.Component {
 	render() {
 		return (
 			<div className="Track">
-				<img src={this.props.track.img} />
+				<img src={this.props.track.img} alt="album cover" />
 				<div className="Track-information">
 					<h3>{this.props.track.name}</h3>
 					<p>
