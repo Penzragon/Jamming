@@ -41,9 +41,14 @@ class Track extends React.Component {
 					<p>
 						{this.props.track.artist} | {this.props.track.album}
 					</p>
-					<audio controls>
-						<source src={this.props.track.preview} />
-					</audio>
+					{this.props.track.preview && (
+						<audio id="player" src={this.props.track.preview} controls></audio>
+					)}
+					{!this.props.track.preview && (
+						<p style={{ fontWeight: "bold", marginTop: "0.5rem" }}>
+							No Audio Sample
+						</p>
+					)}
 				</div>
 				{this.renderAction()}
 			</div>
