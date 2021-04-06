@@ -43,7 +43,10 @@ class Track extends React.Component {
 	renderPlayPause() {
 		if (this.state.isPlaying) {
 			return (
-				<button className="Track-action PlayPause" onClick={this.pauseSample}>
+				<button
+					className="Track-action PlayPause Pause"
+					onClick={this.pauseSample}
+				>
 					Pause
 				</button>
 			);
