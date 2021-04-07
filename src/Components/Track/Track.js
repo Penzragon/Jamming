@@ -16,6 +16,7 @@ class Track extends React.Component {
 
 	playSample() {
 		this.setState({ isPlaying: true });
+		this.state.audio.volume = 0.3;
 		this.state.audio.play();
 	}
 
